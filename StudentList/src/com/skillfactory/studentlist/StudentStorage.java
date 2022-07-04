@@ -55,9 +55,6 @@ public class StudentStorage {
 
 	public Student getStudentByName(String name) {	
 		try {
-				if (storage.get(name) == null) {
-					throw new NullPointerException();
-				}
 				return storage.get(name); 	
 		} catch (NullPointerException e) {
 			System.out.println("no such student");

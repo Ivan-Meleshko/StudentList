@@ -12,10 +12,6 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		StudentStorage newStorage = new StudentStorage();
 		
-		Student pupkin = new Student("Pupkin", "+893335544", "pupkin@mail.ru");
-		
-		//newStorage.addStudent("Vasiliy Vlasov vasily@mail.ru +8955666433");
-		//newStorage.listStudent();
 		
 		while (true) {
             String command = sc.nextLine();
@@ -25,9 +21,7 @@ public class Main {
             } else if (tokens[0].equals("list")) {
                 newStorage.listStudent();
             } else if (tokens[0].equals("get")) {
-   
 					newStorage.getStudentByName(tokens[1]).toString();
-				
             } else if (tokens[0].equals("remove")) {
                 newStorage.removeStudent(tokens[1]);
             } else if (tokens[0].equals("count")) {
