@@ -54,7 +54,16 @@ public class StudentStorage {
 	}
 
 	public Student getStudentByName(String name) {	
-			return storage.get(name); 
+		try {
+				if (storage.get(name) == null) {
+					throw new NullPointerException();
+				}
+				return storage.get(name); 	
+		} catch (NullPointerException e) {
+			System.out.println("no such student");
+			}
+		return null;
+		
 	}
 
 	public int getCount() {
@@ -76,4 +85,14 @@ public class StudentStorage {
 			this.message = message;
 		}
 	}
+	
+	public class MyException extends Exception {
+		String message;
+
+		public MyException(String message) {
+			this.message = message;
+		}
+	}
+	
+	
 }
