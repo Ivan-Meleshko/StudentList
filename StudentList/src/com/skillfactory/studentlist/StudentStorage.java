@@ -53,15 +53,34 @@ public class StudentStorage {
 		}
 	}
 
+//	public Student getStudentByName(String name) {	
+//		try {
+//			if (storage.get(name) == null) {
+//				throw new MissException("Miss");
+//			}
+//			return storage.get(name); 	
+//		} catch (MissException e) {
+//			System.out.println(e.message);
+//			return null;
+//		} 
+//			
+//	}
+		
 	public Student getStudentByName(String name) {	
-		try {
-				return storage.get(name); 	
-		} catch (NullPointerException e) {
-			System.out.println("no such student");
-			}
+	try {
+		if (storage.get(name) == null) {
+			throw new MissException("Miss");
+		}
+		return storage.get(name); 	
+	} catch (MissException e) {
+		System.out.println(e.message);
 		return null;
+	} 
 		
 	}
+	
+		
+	
 
 	public int getCount() {
 		return storage.size();
@@ -87,7 +106,7 @@ public class StudentStorage {
 		String message;
 
 		public MyException(String message) {
-			this.message = message;
+			super(message);
 		}
 	}
 	

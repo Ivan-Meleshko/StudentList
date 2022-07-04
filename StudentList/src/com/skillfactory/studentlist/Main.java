@@ -2,6 +2,7 @@ package com.skillfactory.studentlist;
 
 import java.util.Scanner;
 
+import com.skillfactory.studentlist.StudentStorage.MissException;
 import com.skillfactory.studentlist.StudentStorage.MyException;
 import com.skillfactory.studentlist.StudentStorage.SizeException;
 
@@ -21,7 +22,9 @@ public class Main {
             } else if (tokens[0].equals("list")) {
                 newStorage.listStudent();
             } else if (tokens[0].equals("get")) {
-					newStorage.getStudentByName(tokens[1]).toString();
+				
+						newStorage.getStudentByName(tokens[1]).toString();
+            
             } else if (tokens[0].equals("remove")) {
                 newStorage.removeStudent(tokens[1]);
             } else if (tokens[0].equals("count")) {
